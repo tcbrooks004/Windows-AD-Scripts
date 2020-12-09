@@ -1,0 +1,7 @@
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $Credential -Authentication Basic -AllowRedirection
+Import-PSSession $Session -AllowClobber
+$DLmembers = Import-Csv C:\Users\t724421\desktop\YGKrogerEmail.csv
+
+Foreach ($member in $DLmembers) {
+Add-DistributionGroupMember -Identity "PCFTelemetry_DL" -Member $member.emailaddress -WhatIf
+} 
