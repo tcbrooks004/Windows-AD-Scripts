@@ -1,0 +1,5 @@
+Connect-ExchangeOnline
+
+foreach($group in (get-content C:\users\t724421\Desktop\Book3.csv)){
+    Add-DistributionGroupMember $group –Member "beth.giglio@kroger.com" -Verbose
+}
