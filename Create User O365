@@ -1,0 +1,5 @@
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $Credential -Authentication Basic -AllowRedirection
+Import-PSSession $Session -AllowClobber
+
+
+Import-Csv C:\users\t724421\Desktop\YGKroger.csv|%{New-MailContact -Name $_.Name -DisplayName $_.Name -ExternalEmailAddress $_.ExternalEmailAddress -FirstName $_.FirstName -LastName $_.LastName -WhatIf} 
